@@ -1,0 +1,9 @@
+{
+  "name": "todomove",
+  "description": "Syncs delegated-task status with Todomove.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Todomove"
+  },
+  "license": "MIT"
+}

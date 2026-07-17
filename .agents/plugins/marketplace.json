@@ -1,0 +1,20 @@
+{
+  "name": "todomove-codex-plugin",
+  "interface": {
+    "displayName": "Todomove Delegation"
+  },
+  "plugins": [
+    {
+      "name": "todomove",
+      "description": "Syncs delegated-task status with Todomove.",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_FIRST_USE"
+      }
+    }
+  ]
+}
