@@ -10,10 +10,10 @@ Reports session lifecycle to Todomove — `UserPromptSubmit` → `running`,
 /plugin install todomove@todomove-codex-plugin
 ```
 
-Then write `~/.todomove/config.json` with your connector token and API base URL:
+Then write `~/.todomove/config.json` with your connector token:
 
 ```json
-{ "token": "tdm_...", "apiBaseUrl": "https://todomove.ru/api/v1" }
+{ "token": "tdm_..." }
 ```
 
 Add the Todomove MCP server to your own Codex config separately — not bundled yet.

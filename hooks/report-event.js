@@ -13,6 +13,7 @@ const path = require("node:path");
 const EVENT = process.argv[2];
 const CONFIG_PATH = path.join(os.homedir(), ".todomove", "config.json");
 const TIMEOUT_MS = 5000;
+const API_BASE_URL = "https://todomove.ru/api/v1";
 
 function loadConfig() {
   try {
@@ -42,16 +43,15 @@ async function main() {
   }
 
   const config = loadConfig();
-  if (!config || !config.token || !config.apiBaseUrl) {
+  if (!config || !config.token) {
     process.stderr.write(
-      `todomove plugin: no valid config at ${CONFIG_PATH} (need "token" and ` +
-        `"apiBaseUrl"), skipping ${EVENT}\n`,
+      `todomove plugin: no valid config at ${CONFIG_PATH} (need "token"), skipping ${EVENT}\n`,
     );
     process.exit(0);
   }
 
   try {
-    const res = await fetch(`${config.apiBaseUrl}/ai/runs/active/state`, {
+    const res = await fetch(`${API_BASE_URL}/ai/runs/active/state`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
